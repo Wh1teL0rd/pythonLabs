@@ -21,8 +21,3 @@ class CombatDrone(Drone):
 
     def get_max_flying_distance_at_current_speed(self):
         return self.current_battery_level / 15 * self.current_speed
-
-    def __str__(self):
-        return f"CombatDrone(current_speed={self.current_speed}, current_altitude={self.current_altitude}," \
-            f" current_ammo={self.current_ammo}, max_ammo={self.max_ammo}, " \
-            f"current_battery_level={self.current_battery_level})"

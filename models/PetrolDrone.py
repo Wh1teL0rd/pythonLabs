@@ -10,8 +10,3 @@ class PetrolDrone(Drone):
 
     def get_max_flying_distance_at_current_speed(self):
         return self.tank_capacity / self.fuel_consumption_per_hour * self.current_speed
-
-    def __str__(self):
-        return f"PetrolDrone(current_speed={self.current_speed}, current_altitude={self.current_altitude}," \
-            f" tank_capacity={self.tank_capacity}, type_of_fuel={self.type_of_fuel}," \
-            f" fuel_consumption_per_hour={self.fuel_consumption_per_hour})"
