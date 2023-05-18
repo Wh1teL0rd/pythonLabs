@@ -21,3 +21,6 @@ class ElectroDrone(Drone):
 
     def get_max_flying_distance_at_current_speed(self):
         return self.current_battery_level / self.fuel_consumption_per_hour * self.current_speed
+
+    def __str__(self):
+        return f"{self.__class__.__name__}: {self.__dict__}"

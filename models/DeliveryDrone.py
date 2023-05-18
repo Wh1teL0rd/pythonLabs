@@ -16,3 +16,6 @@ class DeliveryDrone(Drone):
             self.current_payload = self.max_payload
         else:
             self.current_payload += cargo_weight
+
+    def __str__(self):
+        return f"{self.__class__.__name__}: {self.__dict__}"
