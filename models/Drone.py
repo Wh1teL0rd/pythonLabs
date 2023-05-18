@@ -13,6 +13,3 @@ class Drone(ABC):
     @abstractmethod
     def get_max_flying_distance_at_current_speed(self):
         pass
-
-    def __str__(self):
-        return f"Drone(current_speed={self.current_speed}, current_altitude={self.current_altitude}"
