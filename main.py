@@ -1,8 +1,8 @@
-from managers.DroneManager import DroneManager
-from models.CombatDrone import CombatDrone
-from models.DeliveryDrone import DeliveryDrone
-from models.ElectroDrone import ElectroDrone
-from models.PetrolDrone import PetrolDrone
+from managers.drone_manager import DroneManager
+from models.combat_drone import CombatDrone
+from models.delivery_drone import DeliveryDrone
+from models.electro_drone import ElectroDrone
+from models.petrol_drone import PetrolDrone
 
 print("\t\tFIRST PART\n")
 
