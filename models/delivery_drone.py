@@ -10,7 +10,8 @@ class DeliveryDrone(Drone):
     Args:
         current_speed (float): The current speed of the drone.
         current_altitude (float): The current altitude of the drone.
-        max_payload (float): The maximum payload capacity of the drone. Defaults to 200.
+        max_payload (float): The maximum payload capacity of the drone.
+        Defaults to 200.
         current_battery_level (float): The current battery level of the drone. Defaults to 0.
 
     Attributes:
