@@ -1,3 +1,8 @@
+"""
+This is DroneManager class contains list of drones
+"""
+
+
 class DroneManager:
     """A class representing a drone manager.
 
@@ -7,12 +12,19 @@ class DroneManager:
     Methods:
         add_drone(new_drone): Adds a single drone to the manager.
         add_drones(drones): Adds multiple drones to the manager.
-        find_altitude_bigger_than(altitude): Finds drones with altitude greater than the specified value.
+        find_altitude_bigger_than(altitude): Finds drones with altitude
+         greater than the specified value.
         find_speed_bigger_than(speed): Finds drones with speed greater than the specified value.
 
     """
 
     def __init__(self):
+        """
+           Initializes an instance of DroneManager.
+
+           This method initializes the `drone_list` attribute as an empty list.
+
+        """
         self.drone_list = []
 
     def add_drone(self, new_drone):

@@ -1,3 +1,6 @@
+"""
+This is abstract drone class
+"""
 from abc import ABC, abstractmethod
 
 
@@ -24,6 +27,17 @@ class Drone(ABC):
     """
 
     def __init__(self, current_speed=10, current_altitude=5):
+        """
+            Initializes a new instance of the Drone class.
+
+            :param: current_speed (float): The current speed of the drone in meters
+             per minute. Default is 10.
+            :param: current_altitude (float): The current altitude of the drone in meters.
+            Default is 5.
+
+            Returns:
+                None
+            """
         self.current_speed = current_speed
         self.current_altitude = current_altitude
 
@@ -40,4 +54,9 @@ class Drone(ABC):
 
     @abstractmethod
     def get_max_flying_distance_at_current_speed(self):
-        pass
+        """
+        Gets the maximum flying distance achievable at the current speed.
+
+        Returns:
+            float: The maximum flying distance in meters.
+        """

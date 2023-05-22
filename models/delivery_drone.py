@@ -1,4 +1,7 @@
-from models.drone import Drone
+"""
+This is delivery drone class
+"""
+from .drone import Drone
 
 
 class DeliveryDrone(Drone):
@@ -26,6 +29,16 @@ class DeliveryDrone(Drone):
     """
 
     def __init__(self, current_speed, current_altitude, max_payload=200, current_battery_level=0):
+        """
+           Initializes a DeliveryDrone object.
+
+               :param: (float): The current speed of the delivery drone in meters per minute.
+               :param: (float): The current altitude of the delivery drone in meters.
+               :param: (float): The maximum payload capacity of the delivery drone in kilograms.
+                   Defaults to 200.
+               :param: (float): The current battery level of the delivery drone.
+                   Defaults to 0.
+           """
         super().__init__(current_speed, current_altitude)
         self.max_payload = max_payload
         self.current_battery_level = current_battery_level
@@ -53,4 +66,10 @@ class DeliveryDrone(Drone):
             self.current_payload += cargo_weight
 
     def __str__(self):
+        """
+        Returns a string representation of drone.
+
+        Returns:
+            str: A string representation of drone.
+        """
         return f"{self.__class__.__name__}: {self.__dict__}"

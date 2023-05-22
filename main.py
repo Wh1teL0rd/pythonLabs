@@ -1,3 +1,7 @@
+"""
+This is main file to show how code work
+"""
+
 from managers.drone_manager import DroneManager
 from models.combat_drone import CombatDrone
 from models.delivery_drone import DeliveryDrone
