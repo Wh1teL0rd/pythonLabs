@@ -38,26 +38,27 @@ class ElectroDrone(Drone):
         """
         Initializes a Drone object.
 
-        :param: (float): The current speed of the drone in meters per minute.
-        :param: (float): The current altitude of the drone in meters.
+        :param: current_speed (float): The current speed of the drone in meters per minute.
+        :param: current_altitude (float): The current altitude of the drone in meters.
         :param: battery_capacity (float): The battery capacity of the drone in ampere-hours.
          Defaults to 0.
-        :param: (float): The fuel consumption rate of the drone in liters per hour.
-            Defaults to 0.
-        :param: (float): The current battery level of the drone in ampere-hours.
-            Defaults to 0.
+        :param: fuel_consumption_per_hour (float): The fuel consumption rate of
+        the drone in liters per hour. Defaults to 0.
+        :param: current_battery_level (float): The current battery level of
+        the drone in ampere-hours. Defaults to 0.
+
         """
 
         super().__init__(current_speed, current_altitude)
         self.battery_capacity = battery_capacity
         self.current_battery_level = current_battery_level
         self.fuel_consumption_per_hour = fuel_consumption_per_hour
+        self.favorite_set = {"batteries", "charger"}
 
     def charge_battery(self, amount):
         """Charges the battery of the drone by the specified amount.
 
-        Args:
-            amount (float): The amount to charge the battery.
+           :param: amount (float): The amount to charge the battery.
         """
         self.current_battery_level += amount
         if self.current_battery_level > self.battery_capacity:
@@ -66,8 +67,7 @@ class ElectroDrone(Drone):
     def use_battery(self, amount):
         """Uses the battery of the drone by the specified amount.
 
-        Args:
-            amount (float): The amount to use from the battery.
+            :param: amount (float): The amount to use from the battery.
         """
         self.current_battery_level -= amount
         if self.current_battery_level < 0:

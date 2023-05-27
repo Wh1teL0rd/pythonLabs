@@ -33,17 +33,18 @@ class CombatDrone(Drone):
         """
             Initializes a DeliveryDrone object.
 
-                :param: (float): The current speed of the delivery drone in meters per minute.
-                :param: (float): The current altitude of the delivery drone in meters.
-                :param: max_payload (float, optional): The maximum payload capacity
+                :param: current_speed (float): The current speed of the delivery drone in meters per minute.
+                :param: current_altitude (float): The current altitude of the delivery drone in meters.
+                :param: max_payload (float): The maximum payload capacity
                  of the delivery drone in kilograms. Defaults to 200.
-                :param: current_battery_level (float, optional): The current battery level
+                :param: current_battery_level (float): The current battery level
                  of the delivery drone. Defaults to 0.
             """
         super().__init__(current_speed, current_altitude)
         self.current_ammo = max_ammo
         self.max_ammo = max_ammo
         self.current_battery_level = current_battery_level
+        self.favorite_set = {"weapons", "targeting system"}
 
     def fire(self):
         """Fires a shot from the drone."""
