@@ -49,8 +49,7 @@ class DroneManager:
 
             :param: altitude (float): The altitude threshold.
 
-        Returns:
-            list: A list of drones with altitude greater than the threshold.
+            :return: list: A list of drones with altitude greater than the threshold.
 
         """
         return [drone for drone in self.drone_list if drone.current_altitude > altitude]
@@ -60,8 +59,8 @@ class DroneManager:
 
             :param: speed (float): The speed threshold.
 
-        Returns:
-            list: A list of drones with speed greater than the threshold.
+
+            :return: list: A list of drones with speed greater than the threshold.
 
         """
         return [drone for drone in self.drone_list if drone.current_speed > speed]
@@ -97,8 +96,7 @@ class DroneManager:
 
             :param: value_type (type): The type of values to filter attributes.
 
-        Returns:
-            dict: A dictionary containing attributes and their values of the specified value type.
+            :return: dict: A dictionary containing attributes and their values of the specified value type.
 
         """
         return {attr: value for obj in self.drone_list for attr, value in obj.__dict__.items() if
@@ -109,10 +107,9 @@ class DroneManager:
         """
         Checks the condition for all objects in the drone manager.
 
-           :param: condition (callable): The condition to check for each object.
+            :param: condition (callable): The condition to check for each object.
 
-        Returns:
-            dict: A dictionary with keys "all" and "any" representing the results of the condition.
+            :return: dict: A dictionary with keys "all" and "any" representing the results of the condition.
 
         """
         all_condition = all(condition(drone) for drone in self.drone_list)

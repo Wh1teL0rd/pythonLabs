@@ -77,8 +77,7 @@ class ElectroDrone(Drone):
         """Calculates and returns the maximum flying distance at the current speed
         based on the battery level and fuel consumption.
 
-        Returns:
-            float: The maximum flying distance at the current speed.
+            :return: float: The maximum flying distance at the current speed.
         """
         return self.current_battery_level / self.fuel_consumption_per_hour * self.current_speed
 
@@ -86,7 +85,6 @@ class ElectroDrone(Drone):
         """
         Returns a string representation of drone.
 
-        Returns:
-            str: A string representation of drone.
+            :return: str: A string representation of drone.
         """
         return f"{self.__class__.__name__}: {self.__dict__}"

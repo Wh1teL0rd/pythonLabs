@@ -60,7 +60,6 @@ class PetrolDrone(Drone):
         """
         Returns a string representation of drone.
 
-        Returns:
-            str: A string representation of drone.
+            :return: str: A string representation of drone.
         """
         return f"{self.__class__.__name__}: {self.__dict__}"

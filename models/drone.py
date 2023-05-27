@@ -55,8 +55,7 @@ class Drone(ABC):
         """
         Gets the maximum flying distance achievable at the current speed.
 
-        Returns:
-            float: The maximum flying distance in meters.
+            :return: float: The maximum flying distance in meters.
         """
     def __iter__(self):
         return iter(self.favorite_set)

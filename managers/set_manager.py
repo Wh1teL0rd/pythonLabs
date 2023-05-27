@@ -34,8 +34,7 @@ class SetManager:
         """
         Returns an iterator that iterates over the objects in the favorite sets.
 
-        Returns:
-            iterator: An iterator over the objects in the favorite sets.
+            :return: iterator: An iterator over the objects in the favorite sets.
         """
         for drone in self.regular_manager.drone_list:
             yield from drone.favorite_set
@@ -44,8 +43,7 @@ class SetManager:
         """
         Returns the total length of all favorite sets combined.
 
-        Returns:
-            int: The total length of all favorite sets combined.
+            :return: int: The total length of all favorite sets combined.
         """
         total_len = 0
         for drone in self.regular_manager.drone_list:
@@ -56,13 +54,11 @@ class SetManager:
         """
         Returns the item at the specified index in the combined favorite sets.
 
-        :param: index (int): The index of the item to retrieve.
+            :param: index (int): The index of the item to retrieve.
 
-        Returns:
-            object: The item at the specified index in the combined favorite sets.
+            :return: object: The item at the specified index in the combined favorite sets.
 
-        Raises:
-            IndexError: If the index is out of range.
+            :raises: IndexError: If the index is out of range.
         """
         count = 0
         for drone in self.regular_manager.drone_list:
@@ -78,7 +74,6 @@ class SetManager:
 
         This method is required for iterator compatibility but is not used in SetManager.
 
-        Raises:
-            StopIteration: Always raised to indicate the end of iteration.
+            :raises: StopIteration: Always raised to indicate the end of iteration.
         """
         raise StopIteration()

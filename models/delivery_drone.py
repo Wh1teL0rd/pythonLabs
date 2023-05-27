@@ -49,8 +49,7 @@ class DeliveryDrone(Drone):
     def get_max_flying_distance_at_current_speed(self):
         """Calculates the maximum flying distance at the current speed and battery level.
 
-        Returns:
-            float: The maximum flying distance.
+            :return:float: The maximum flying distance.
 
         """
         return self.current_battery_level / 10 * self.current_speed
@@ -70,7 +69,6 @@ class DeliveryDrone(Drone):
         """
         Returns a string representation of drone.
 
-        Returns:
-            str: A string representation of drone.
+            :return: str: A string representation of drone.
         """
         return f"{self.__class__.__name__}: {self.__dict__}"
