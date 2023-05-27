@@ -9,6 +9,7 @@ from models.delivery_drone import DeliveryDrone
 from models.electro_drone import ElectroDrone
 from models.petrol_drone import PetrolDrone
 
+
 drones = [ElectroDrone(40, 280, 8000, 7000, 900), DeliveryDrone(35, 350, 9600, 9000),
           CombatDrone(60, 130, 3, 5000), PetrolDrone(60, 230, 25, "Benzin", 2.5)]
 
@@ -53,3 +54,6 @@ print("\nLength of SetManager: ", len(set_manager))
 print("\nItems in sets: ")
 for item in set_manager:
     print(item)
+
+fleet.drone_list[0].fly_at(200, 300)
+fleet.drone_list[2].fly_at(100, 3000)

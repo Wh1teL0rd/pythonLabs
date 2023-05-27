@@ -1,6 +1,7 @@
 """
 This is delivery drone class
 """
+from decorators.log_arguments_to_file import log_arguments_to_file
 from .drone import Drone
 
 
@@ -54,6 +55,7 @@ class DeliveryDrone(Drone):
         """
         return self.current_battery_level / 10 * self.current_speed
 
+    @log_arguments_to_file("arguments.log")
     def load_drone(self, cargo_weight):
         """Loads the drone with the given cargo weight.
 

@@ -102,7 +102,6 @@ class DroneManager:
         return {attr: value for obj in self.drone_list for attr, value in obj.__dict__.items() if
                 isinstance(value, value_type)}
 
-    @log_arguments_to_file("arguments.log")
     def check_condition(self, condition):
         """
         Checks the condition for all objects in the drone manager.

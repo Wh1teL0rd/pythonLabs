@@ -3,6 +3,8 @@ This is abstract drone class
 """
 from abc import ABC, abstractmethod
 
+from decorators.log_arguments_to_file import log_arguments_to_file
+
 
 class Drone(ABC):
     """A base abstract class representing a drone.
@@ -40,6 +42,7 @@ class Drone(ABC):
         self.current_altitude = current_altitude
         self.favorite_set = set()
 
+    @log_arguments_to_file("arguments.log")
     def fly_at(self, speed_meters_per_minute, altitude):
         """Sets the current speed and altitude of the drone.
 
