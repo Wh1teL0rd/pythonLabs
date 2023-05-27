@@ -1,6 +1,7 @@
 """
 This is DroneManager class contains list of drones
 """
+from decorators.log_arguments_to_file import log_arguments_to_file
 
 
 class DroneManager:
@@ -90,6 +91,7 @@ class DroneManager:
         results = self.get_max_flying_distance_list()
         return [f'{obj}: {result}' for obj, result in zip(self.drone_list, results)]
 
+    @log_arguments_to_file("arguments.log")
     def get_attributes_by_value_type(self, value_type):
         """Returns a dictionary with attributes and their values of the specified value type.
 
@@ -102,6 +104,7 @@ class DroneManager:
         return {attr: value for obj in self.drone_list for attr, value in obj.__dict__.items() if
                 isinstance(value, value_type)}
 
+    @log_arguments_to_file("arguments.log")
     def check_condition(self, condition):
         """
         Checks the condition for all objects in the drone manager.
