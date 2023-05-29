@@ -34,17 +34,18 @@ class PetrolDrone(Drone):
         """
            Initializes a PetrolDrone object.
 
-               :param: (float): The current speed of the petrol drone in meters per minute.
-               :param: (float): The current altitude of the petrol drone in meters.
-               :param: (float): The tank capacity of the petrol drone in liters. Defaults to 0.
-               :param: (any): The type of fuel used by the petrol drone. Defaults to 0.
-               :param: (float): The fuel consumption rate of the petrol drone in liters per hour.
-                   Defaults to 0.
+               :param: current_speed (float): The current speed of the petrol drone in meters per minute.
+               :param: current_altitude (float): The current altitude of the petrol drone in meters.
+               :param: tank_capacity (float): The tank capacity of the petrol drone in liters. Defaults to 0.
+               :param: type_of_fuel (str): The type of fuel used by the petrol drone. Defaults to 0.
+               :param: fuel_consumption_per_hour (float): The fuel consumption rate of
+               the petrol drone in liters per hour. Defaults to 0.
            """
         super().__init__(current_speed, current_altitude)
         self.tank_capacity = tank_capacity
         self.type_of_fuel = str(type_of_fuel)
         self.fuel_consumption_per_hour = fuel_consumption_per_hour
+        self.favorite_set = {"fuel", "engine"}
 
     def get_max_flying_distance_at_current_speed(self):
         """Calculates and returns the maximum flying distance at the current speed
@@ -59,7 +60,6 @@ class PetrolDrone(Drone):
         """
         Returns a string representation of drone.
 
-        Returns:
-            str: A string representation of drone.
+            :return: str: A string representation of drone.
         """
         return f"{self.__class__.__name__}: {self.__dict__}"

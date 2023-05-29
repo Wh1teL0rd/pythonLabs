@@ -3,6 +3,8 @@ This is abstract drone class
 """
 from abc import ABC, abstractmethod
 
+from decorators.log_arguments_to_file import log_arguments_to_file
+
 
 class Drone(ABC):
     """A base abstract class representing a drone.
@@ -34,19 +36,18 @@ class Drone(ABC):
              per minute. Default is 10.
             :param: current_altitude (float): The current altitude of the drone in meters.
             Default is 5.
-
-            Returns:
-                None
+            :param: favourite_set (set):
             """
         self.current_speed = current_speed
         self.current_altitude = current_altitude
+        self.favorite_set = set()
 
+    @log_arguments_to_file("arguments.log")
     def fly_at(self, speed_meters_per_minute, altitude):
         """Sets the current speed and altitude of the drone.
 
-        Args:
-            speed_meters_per_minute (float): The speed in meters per minute to set.
-            altitude (float): The altitude to set.
+            :param: speed_meters_per_minute (float): The speed in meters per minute to set.
+            :param: altitude (float): The altitude to set.
 
         """
         self.current_speed = speed_meters_per_minute
@@ -57,6 +58,7 @@ class Drone(ABC):
         """
         Gets the maximum flying distance achievable at the current speed.
 
-        Returns:
-            float: The maximum flying distance in meters.
+            :return: float: The maximum flying distance in meters.
         """
+    def __iter__(self):
+        return iter(self.favorite_set)
