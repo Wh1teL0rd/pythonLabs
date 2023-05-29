@@ -74,8 +74,16 @@ class DroneManager:
         return self.drone_list[index]
 
     def __iter__(self):
-        """Returns an iterator over the drones in the manager."""
-        return iter(self.drone_list)
+        self.current_index = 0
+        return self
+
+    def __next__(self):
+        if self.current_index >= len(self.drone_list):
+            raise StopIteration
+        else:
+            drone = self.drone_list[self.current_index]
+            self.current_index += 1
+            return drone
 
     def get_max_flying_distance_list(self):
         """Returns a list of maximum flying distances at current speed for all drones in the manager."""

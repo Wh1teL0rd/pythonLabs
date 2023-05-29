@@ -76,4 +76,4 @@ class SetManager:
 
             :raises: StopIteration: Always raised to indicate the end of iteration.
         """
-        raise StopIteration()
+        raise StopIteration
