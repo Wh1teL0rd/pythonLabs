@@ -1,6 +1,9 @@
 """
 This is electro drone class
 """
+from decorators.my_logging import logged
+from exceptions.out_of_ammo_exception import OutOfAmmoException
+from exceptions.redundant_ammo_reload_exception import RedundantAmmoReloadException
 from .drone import Drone
 
 
@@ -46,16 +49,20 @@ class CombatDrone(Drone):
         self.current_battery_level = current_battery_level
         self.favorite_set = {"weapons", "targeting system"}
 
+    @logged(OutOfAmmoException, mode="file")
     def fire(self):
         """Fires a shot from the drone."""
         if self.current_ammo > 0:
             self.current_ammo -= 1
             print("Firing! Ammo left:", self.current_ammo)
         else:
-            print("Out of ammo. Reload!")
+            raise OutOfAmmoException()
 
+    @logged(RedundantAmmoReloadException, mode="file")
     def reload(self):
         """Reloads the drone with ammo."""
+        if self.current_ammo == self.max_ammo:
+            raise RedundantAmmoReloadException()
         self.current_ammo = self.max_ammo
         print("Reloading. Ammo reloaded:", self.max_ammo)
 
